@@ -1,5 +1,5 @@
 import Country from "@reiz-countries/types/country";
-import CountryList from "@reiz-countries/components/CountryList";
+import CountryList from "@reiz-countries/components/home/CountryList";
 
 type PageProps = {
   countries: Country[];

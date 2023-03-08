@@ -33,8 +33,7 @@ function PreviousButton({ onClick }: { onClick: () => void }) {
   return (
     <li
       onClick={onClick}
-      className="ml-0 rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-    >
+      className="ml-0 rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
       Previous
     </li>
   );
@@ -58,8 +57,7 @@ function PageNumber({
       className={`flex w-10 items-center justify-center border border-gray-300 dark:border-gray-700 ${
         selected ? activeClassNames : defaultClassNames
       }`}
-      onClick={onClick}
-    >
+      onClick={onClick}>
       {value + 1}
     </li>
   );
@@ -69,8 +67,7 @@ function NextButton({ onClick }: { onClick: () => void }) {
   return (
     <li
       onClick={onClick}
-      className="rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-    >
+      className="rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
       Next
     </li>
   );

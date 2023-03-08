@@ -1,8 +1,8 @@
 import Country from "@reiz-countries/types/country";
 import useCountries from "@reiz-countries/hooks/useCountries";
-import CountryListItem from "@reiz-countries/components/CountryList/CountryListItem";
-import CountryListPages from "@reiz-countries/components/CountryList/CountryListPages";
-import CountryListSort from "@reiz-countries/components/CountryList/CountryListSort";
+import CountryListItem from "@reiz-countries/components/home/CountryList/CountryListItem";
+import CountryListPages from "@reiz-countries/components/home/CountryList/CountryListPages";
+import CountryListSort from "@reiz-countries/components/home/CountryList/CountryListSort";
 
 type Props = {
   countries: Country[];
