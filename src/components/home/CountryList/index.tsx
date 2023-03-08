@@ -10,17 +10,35 @@ type Props = {
 };
 
 export default function CountryList(props: Props) {
-  const { countries, page, maxPage, setPage, ascending, setAscending } =
-    useCountries(props.countries);
+  const {
+    countries,
+    page,
+    maxPage,
+    setPage,
+    ascending,
+    setAscending,
+    filterArea,
+    filterRegion,
+  } = useCountries(props.countries);
+
+  const filterLessThanLithuaniaArea = (active: boolean) => {
+    filterArea(
+      active ? { country: "Lithuania", isGreaterThan: false } : undefined
+    );
+  };
+
+  const filterCountriesInOceania = (active: boolean) => {
+    filterRegion(active ? "Oceania" : undefined);
+  };
 
   return (
     <>
       <div className="flex flex-wrap justify-between gap-2">
         <div className="flex flex-wrap gap-2">
-          <FilterBadge onToggle={() => {}}>
+          <FilterBadge onToggle={filterLessThanLithuaniaArea}>
             Less Than Lithuania&apos;s Area
           </FilterBadge>
-          <FilterBadge onToggle={() => {}}>
+          <FilterBadge onToggle={filterCountriesInOceania}>
             Countries in Oceania
           </FilterBadge>
         </div>
