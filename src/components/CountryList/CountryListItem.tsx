@@ -9,7 +9,7 @@ type Props = {
 export default function CountryListItem({ country }: Props) {
   return (
     <div className="block max-w-sm rounded-lg border border-gray-200 bg-white p-6 shadow hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-      <h4 className="truncate text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+      <h4 className="mb-1 truncate text-xl font-bold tracking-tight text-gray-900 dark:text-white">
         {country.name}
       </h4>
       <p className="flex items-center gap-1 text-sm">
