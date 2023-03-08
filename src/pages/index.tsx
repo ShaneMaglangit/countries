@@ -1,13 +1,11 @@
-import useCountries from "@reiz-countries/hooks/useCountries";
-import CountryList from "@reiz-countries/components/CountryList";
 import Country from "@reiz-countries/types/country";
+import CountryList from "@reiz-countries/components/CountryList";
 
 type PageProps = {
   countries: Country[];
 };
 
-export default function Home(props: PageProps) {
-  const { countries, page, maxPage, setPage } = useCountries(props.countries);
+export default function Home({ countries }: PageProps) {
   return (
     <main className="container mx-auto flex flex-col gap-4 p-8">
       <div>
@@ -16,16 +14,7 @@ export default function Home(props: PageProps) {
           Visualized representation of country names, regions, and area sizes.
         </p>
       </div>
-      <CountryList>
-        {countries?.map((country) => (
-          <CountryList.Item key={country.name} country={country} />
-        ))}
-      </CountryList>
-      <CountryList.Pages
-        pages={maxPage}
-        currentPage={page}
-        onPageChange={setPage}
-      />
+      <CountryList countries={countries} />
     </main>
   );
 }
