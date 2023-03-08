@@ -1,8 +1,13 @@
 import useCountries from "@reiz-countries/hooks/useCountries";
 import CountryList from "@reiz-countries/components/CountryList";
+import Country from "@reiz-countries/types/country";
 
-export default function Home() {
-  const { countries } = useCountries();
+type PageProps = {
+  countries: Country[];
+};
+
+export default function Home(props: PageProps) {
+  const { countries } = useCountries(props.countries);
   return (
     <main className="container mx-auto flex flex-col gap-4 p-8">
       <div>
@@ -18,4 +23,15 @@ export default function Home() {
       </CountryList>
     </main>
   );
+}
+
+export async function getStaticProps() {
+  const url = `${process.env.NEXT_PUBLIC_COUNTRIES_API_URL}/all?fields=name,region,area`;
+  const data = await fetch(url);
+  const countries = await data.json();
+  return {
+    props: {
+      countries,
+    },
+  };
 }
