@@ -10,7 +10,7 @@ export default function CountryListPages({
   onPageChange,
 }: Props) {
   return (
-    <ul className="flex cursor-pointer justify-center">
+    <ul className="flex h-9 cursor-pointer justify-center">
       <PreviousButton
         onClick={() => onPageChange(Math.max(currentPage - 1, 0))}
       />
@@ -33,7 +33,7 @@ function PreviousButton({ onClick }: { onClick: () => void }) {
   return (
     <li
       onClick={onClick}
-      className="ml-0 rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+      className="ml-0 hidden items-center rounded-l-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:flex">
       Previous
     </li>
   );
@@ -67,7 +67,7 @@ function NextButton({ onClick }: { onClick: () => void }) {
   return (
     <li
       onClick={onClick}
-      className="rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700">
+      className="hidden items-center rounded-r-lg border border-gray-300 bg-white px-3 py-2 leading-tight text-gray-500 hover:bg-gray-100 hover:text-gray-700 md:flex">
       Next
     </li>
   );
