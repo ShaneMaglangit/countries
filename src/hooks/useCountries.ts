@@ -13,12 +13,13 @@ type Filters = {
 };
 
 export default function useCountries(initialData: Country[]) {
+  const [countries] = useState<Country[]>(initialData);
+  const [filters, setFilters] = useState<Filters>({ ascending: true });
+
   const [page, setPage] = useState(0);
   const [maxPage, setMaxPage] = useState(
     Math.ceil(initialData.length / PAGE_SIZE)
   );
-  const [countries] = useState<Country[]>(initialData);
-  const [filters, setFilters] = useState<Filters>({ ascending: true });
 
   const filteredCountries = useMemo(() => {
     // Apply filters
