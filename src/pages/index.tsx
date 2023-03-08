@@ -7,7 +7,7 @@ type PageProps = {
 };
 
 export default function Home(props: PageProps) {
-  const { countries } = useCountries(props.countries);
+  const { countries, page, maxPage, setPage } = useCountries(props.countries);
   return (
     <main className="container mx-auto flex flex-col gap-4 p-8">
       <div>
@@ -21,6 +21,11 @@ export default function Home(props: PageProps) {
           <CountryList.Item key={country.name} country={country} />
         ))}
       </CountryList>
+      <CountryList.Pages
+        pages={maxPage}
+        currentPage={page}
+        onPageChange={setPage}
+      />
     </main>
   );
 }
